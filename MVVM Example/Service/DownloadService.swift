@@ -1,8 +1,8 @@
 import Foundation
 
-class Service {
+class DownloadService {
     private init() {}
-    static let shared = Service()
+    static let shared = DownloadService()
     
     func fetchRequest(completion: @escaping (Model?, Error?) -> ()){
         let urlString = "https://api.darksky.net/forecast/a9cc91c8fab9839f51dbd2397f9e6470/55.45,37.37?lang=ru&units=auto"
@@ -20,6 +20,6 @@ class Service {
             } catch let error as NSError {
                 print(error.localizedDescription)
             }
-            }.resume()
+        }.resume()
     }
 }

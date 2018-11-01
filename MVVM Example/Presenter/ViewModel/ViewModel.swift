@@ -3,9 +3,9 @@ struct ViewModel {
     let temperature: Double
     let time: Int
     
-    init(model: Model) {
-        self.summary = model.currently.summary
-        self.temperature = model.currently.temperature
-        self.time = model.currently.time
+    init(model: Data) {
+        self.summary = model.summary
+        self.temperature = model.temperatureHigh
+        self.time = model.time
     }
 }

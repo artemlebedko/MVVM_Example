@@ -11,26 +11,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         downloadData()
-        setupTableView()
     }
     
     fileprivate func downloadData() {
-        Service.shared.fetchRequest { (models, error) in
+        DownloadService.shared.fetchRequest { (models, error) in
             if let error = error {
                 print(error.localizedDescription)
                 return
             }
-            
-            self.fileData = models.map({return [ViewModel(model: $0)]}) ?? []
+
+            self.fileData = models?.daily.data.map({return ViewModel(model: $0)}) ?? []
             self.tableView.reloadData()
         }
-    }
-    
-    fileprivate func setupTableView() {
-        tableView.separatorInset = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 50
-        tableView.tableFooterView = UIView()
     }
 }
 
@@ -44,6 +36,7 @@ extension ViewController: UITableViewDataSource {
         let viewModel = fileData[indexPath.row]
         cell.summaryLabel.text = viewModel.summary
         cell.temperatureLabel.text = "Температура: " + String(viewModel.temperature) + "°"
+        cell.timeLabel.text = TimeService.shared.transform(viewModel.time)
         return cell
     }
 }

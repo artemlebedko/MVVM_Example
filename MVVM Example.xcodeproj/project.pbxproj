@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ACC6BB6C218B5DE000F4057D /* TimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6BB6B218B5DE000F4057D /* TimeService.swift */; };
 		ACFF5125218A4CC700055342 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFF5124218A4CC700055342 /* AppDelegate.swift */; };
 		ACFF512A218A4CC700055342 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACFF5128218A4CC700055342 /* Main.storyboard */; };
 		ACFF512C218A4CC700055342 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFF512B218A4CC700055342 /* Assets.xcassets */; };
@@ -15,10 +16,11 @@
 		ACFF5139218A4D7C00055342 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFF5138218A4D7C00055342 /* Model.swift */; };
 		ACFF513B218A4D8100055342 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFF513A218A4D8100055342 /* ViewModel.swift */; };
 		ACFF513D218A4D8800055342 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFF513C218A4D8800055342 /* CustomCell.swift */; };
-		ACFF513F218A4D8E00055342 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFF513E218A4D8E00055342 /* Service.swift */; };
+		ACFF513F218A4D8E00055342 /* DownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFF513E218A4D8E00055342 /* DownloadService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ACC6BB6B218B5DE000F4057D /* TimeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeService.swift; sourceTree = "<group>"; };
 		ACFF5121218A4CC700055342 /* MVVM Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACFF5124218A4CC700055342 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACFF5129218A4CC700055342 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -29,7 +31,7 @@
 		ACFF5138218A4D7C00055342 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		ACFF513A218A4D8100055342 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		ACFF513C218A4D8800055342 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
-		ACFF513E218A4D8E00055342 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		ACFF513E218A4D8E00055342 /* DownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +121,8 @@
 		ACFF5145218A4DBA00055342 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				ACFF513E218A4D8E00055342 /* Service.swift */,
+				ACFF513E218A4D8E00055342 /* DownloadService.swift */,
+				ACC6BB6B218B5DE000F4057D /* TimeService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -195,12 +198,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACC6BB6C218B5DE000F4057D /* TimeService.swift in Sources */,
 				ACFF5139218A4D7C00055342 /* Model.swift in Sources */,
 				ACFF5125218A4CC700055342 /* AppDelegate.swift in Sources */,
 				ACFF513D218A4D8800055342 /* CustomCell.swift in Sources */,
 				ACFF513B218A4D8100055342 /* ViewModel.swift in Sources */,
 				ACFF5137218A4D7700055342 /* Controller.swift in Sources */,
-				ACFF513F218A4D8E00055342 /* Service.swift in Sources */,
+				ACFF513F218A4D8E00055342 /* DownloadService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
