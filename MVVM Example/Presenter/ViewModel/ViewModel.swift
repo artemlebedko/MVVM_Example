@@ -7,6 +7,5 @@ struct ViewModel {
         self.summary = model.currently.summary
         self.temperature = model.currently.temperature
         self.time = model.currently.time
-        
     }
 }
