@@ -3,7 +3,7 @@ import UIKit
 class ViewController: UIViewController {
     
     private let cellIdentifier = "Cell"
-    private var fileData = [ViewModel]()
+    private var viewModels = [ViewModel]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,8 +19,8 @@ class ViewController: UIViewController {
                 print(error.localizedDescription)
                 return
             }
-
-            self.fileData = models?.daily.data.map({return ViewModel(model: $0)}) ?? []
+            
+            self.viewModels = models?.daily.data.map({return ViewModel(model: $0)}) ?? []
             self.tableView.reloadData()
         }
     }
@@ -28,15 +28,13 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fileData.count
+        return viewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CustomCell
-        let viewModel = fileData[indexPath.row]
-        cell.summaryLabel.text = viewModel.summary
-        cell.temperatureLabel.text = "Температура: " + String(viewModel.temperature) + "°"
-        cell.timeLabel.text = TimeService.shared.transform(viewModel.time)
+        let viewModel = viewModels[indexPath.row]
+        cell.viewModel = viewModel
         return cell
     }
 }

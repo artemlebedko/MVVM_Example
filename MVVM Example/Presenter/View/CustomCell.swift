@@ -6,11 +6,11 @@ class CustomCell: UITableViewCell {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
-    var viewModel: Data! {
+    var viewModel:  ViewModel! {
         didSet {
             summaryLabel?.text = viewModel.summary
-            temperatureLabel?.text = String(viewModel.temperatureHigh)
-            timeLabel?.text = String(viewModel.time)
+            temperatureLabel?.text = "Температура: " + String(viewModel.temperature) + "°"
+            timeLabel?.text = TimeService.shared.transform(viewModel.time)
         }
     }
 }
